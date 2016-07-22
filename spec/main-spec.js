@@ -25,6 +25,7 @@ describe('buildInput', ()=> {
     const input4 = 450561;
 
     it('build input', ()=> {
+
         const expectText1 = ['4', '5', '0', '5', '6'];
         const expectText2 = ['4', '5', '0', '5', '6', '1', '2', '3', '4'];
 
