@@ -1,20 +1,6 @@
 const main = require('../main/main.js');
 const fixture = require('./fixture.js');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 describe('print', ()=> {
 
     const inputs = 450561234;

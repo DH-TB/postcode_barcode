@@ -49,13 +49,12 @@ function buildPostCode(postCodes) {
 }
 
 function buildCode(postCodes, barcodes) {
-    return postCodes.map(postCode => barcodes[postCode]);
+    return postCodes.map(postCode => barcodes[postCode]).join('');
 }
 
 function buildCodeText(codes) {
-    codes.push('|');
-    codes.unshift('|');
-    return codes.join('');
+
+    return `|${codes}|`;
 }
 
 module.exports = {
