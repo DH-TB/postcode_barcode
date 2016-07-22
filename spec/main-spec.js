@@ -21,7 +21,7 @@ describe('print', ()=> {
 describe('buildInput', ()=> {
     const input1 = 45056;
     const input2 = 450561234;
-    // const input3 = 45056-1234;
+    const input3 = 45056-1234;
     const input4 = 450561;
 
     it('build input', ()=> {
@@ -30,7 +30,7 @@ describe('buildInput', ()=> {
 
         expect(main.buildInputs(input1)).toEqual(expectText1);
         expect(main.buildInputs(input2)).toEqual(expectText2);
-        // expect(main.buildInputs(input3)).toEqual(expectText2);
+        expect(main.buildInputs(input3)).toEqual(expectText2);
         expect(main.buildInputs(input4)).toEqual(false);
     });
 });

@@ -13,14 +13,10 @@ function print(inputs) {
 }
 
 function buildInputs(inputs) {
-    const input = inputs.toString().split('');
-    const length = input.length;
+    const input = inputs.toString().replace('-','').split('');
 
+    const length = input.length;
     if ((length == 5) || (length == 9)) {
-        return input;
-    }
-    else if (length == 10) {
-        input.splice(5, 1);
         return input;
     }
     else {
@@ -29,23 +25,13 @@ function buildInputs(inputs) {
 
 }
 
-function cal(postCode) {
-    const sum = postCode.reduce((a, b) => (a + b));
-    var checkDigit = 0;
-    if (!sum % 10) {
-        checkDigit = 10 - sum % 10;
-    }
-    return checkDigit;
-}
-
 function buildPostCode(postCodes) {
-    const postCode = postCodes.map(postCode=> {
-        return Number(postCode)
-    });
-    var checkDigit = cal(postCode);
-    postCode.push(checkDigit);
-    return postCode;
 
+    const postCode = postCodes.map(postCode=>Number(postCode));
+    const sum = postCode.reduce((a, b) => (a + b));
+    postCode.push((10 - sum % 10) % 10);
+
+    return postCode;
 }
 
 function buildCode(postCodes, barcodes) {
